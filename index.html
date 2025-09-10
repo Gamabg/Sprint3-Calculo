@@ -1,273 +1,418 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Relatório – Funções, Limites e Derivadas no Futebol</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f4f4f9;
-            color: #222;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f4f4f9;
+        color: #222;
+      }
 
-        header {
-            background: #111;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
+      header {
+        background: #111;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
 
-        header h1 {
-            margin: 0;
-        }
+      header h1 {
+        margin: 0;
+      }
 
-        main {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-        }
+      main {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+      }
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 20px;
-        }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 20px;
+      }
 
-        .card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
+      .card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
 
-        .card h2 {
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-            color: #333;
-        }
+      .card h2 {
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+        color: #333;
+      }
 
-        .formula {
-            font-family: "Courier New", monospace;
-            background: #eee;
-            padding: 5px 10px;
-            border-radius: 5px;
-            display: inline-block;
-            margin: 5px 0;
-        }
+      .formula {
+        font-family: "Courier New", monospace;
+        background: #eee;
+        padding: 5px 10px;
+        border-radius: 5px;
+        display: inline-block;
+        margin: 5px 0;
+      }
 
-        label {
-            display: block;
-            margin: 10px 0 5px;
-            font-weight: bold;
-        }
+      label {
+        display: block;
+        margin: 10px 0 5px;
+        font-weight: bold;
+      }
 
-        input {
-            padding: 8px;
-            width: 100%;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-        }
+      input {
+        padding: 8px;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+      }
 
-        canvas {
-            margin-top: 15px;
-        }
+      canvas {
+        margin-top: 15px;
+      }
 
-        .relatorio {
-            background: #fff;
-            padding: 30px;
-            margin-top: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
+      .relatorio {
+        background: #fff;
+        padding: 30px;
+        margin-top: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
 
-        .relatorio h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #111;
-        }
+      .relatorio h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #111;
+      }
 
-        .relatorio h3 {
-            margin-top: 20px;
-            color: #333;
-        }
+      .relatorio h3 {
+        margin-top: 20px;
+        color: #333;
+      }
 
-        .relatorio p,
-        .relatorio ul {
-            margin: 10px 0;
-        }
+      .relatorio p,
+      .relatorio ul {
+        margin: 10px 0;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>Differentiated Problem Solving</h1>
-        <hr>
-        <p>Funções, Limites e Derivadas aplicados ao Futebol Feminino <br>Bruno Gama, Kauai Rosa, Lucas Pedro, Murilo Bastos</p>
+      <h1>Differentiated Problem Solving</h1>
+      <hr />
+      <p>
+        Funções, Limites e Derivadas aplicados ao Futebol Feminino <br />Bruno
+        Gama, Kauai Rosa, Lucas Pedro, Murilo Bastos
+      </p>
     </header>
 
     <main>
-        <!-- Cards -->
-        <div class="cards">
+      <!-- Cards -->
+      <div class="cards"></div>
+        <!-- Função -->
+        
 
-            <!-- Função -->
-            <div class="card">
-                <h2>Função – Crescimento de Seguidores</h2>
-                <p class="formula">f(t) = 5000 · (1,08)<sup>t</sup></p>
-                <label for="tempo-funcao">Tempo (meses):</label>
-                <input type="number" id="tempo-funcao" value="12" min="0" oninput="atualizarFuncao()">
-                <p id="resultado-funcao"></p>
-                <canvas id="grafico-funcao"></canvas>
-            </div>
+        
 
-            <!-- Limite -->
-            <div class="card">
-                <h2>Limite – Saturação do Engajamento</h2>
-                <p class="formula">lim (t → ∞) f(t) = L</p>
-                <label for="tempo-limite">Tempo (meses):</label>
-                <input type="number" id="tempo-limite" value="24" min="1" oninput="atualizarLimite()">
-                <p id="resultado-limite"></p>
-                <canvas id="grafico-limite"></canvas>
-            </div>
+        
 
-            <!-- Derivada -->
-            <div class="card">
-                <h2>Derivada – Velocidade Instantânea</h2>
-                <p class="formula">v(t) = ds/dt</p>
-                <label for="tempo-derivada">Tempo (segundos):</label>
-                <input type="number" id="tempo-derivada" value="5" min="0" oninput="atualizarDerivada()">
-                <p id="resultado-derivada"></p>
-                <canvas id="grafico-derivada"></canvas>
-            </div>
+      <!-- Relatório -->
+      <section class="relatorio">
+        <h2>Relatório Conceitual</h2>
+
+        <h3>Introdução</h3>
+        <p>
+          Este relatório apresenta um protótipo conceitual que conecta a
+          matemática (funções, limites e derivadas) com o futebol feminino,
+          explorando tanto o desempenho esportivo em campo quanto o engajamento
+          digital das atletas. A matemática pode fornecer uma análise
+          quantitativa de aspectos que muitas vezes são observados de maneira
+          mais subjetiva, como o crescimento de seguidores nas redes sociais ou
+          a velocidade de uma jogadora em campo.
+        </p>
+
+        <h3>Protótipo</h3>
+        <p>O protótipo consiste em três modelos matemáticos principais:</p>
+        <ul>
+          <li>
+            <b>Funções exponenciais</b>: Aqui, usamos uma função que modela o
+            crescimento do número de seguidores de uma jogadora ao longo do
+            tempo.
+          </li>
+          <li>
+            <b>Limites</b>: Um modelo para entender o ponto de saturação do
+            engajamento digital, ou seja, o momento em que o número de
+            interações atinge seu máximo.
+          </li>
+          <li>
+            <b>Derivadas</b>: Este modelo descreve a velocidade instantânea de
+            uma jogadora em campo, ou seja, sua velocidade exata em um dado
+            momento.
+          </li>
+        </ul>
+
+        <h3>Descrição da Ideia</h3>
+        <p>
+          A ideia central desse relatório é mostrar que conceitos matemáticos
+          fundamentais, como funções, limites e derivadas, podem ser aplicados
+          tanto no campo de futebol quanto no universo digital. As jogadoras de
+          futebol, assim como seus números de seguidores, têm um desempenho que
+          pode ser modelado matematicamente, o que permite análises mais
+          objetivas e precisas.
+        </p>
+        
+        <h3>Explicação Detalhada das Funções</h3>
+
+        <h4>Função Exponencial</h4>
+        <p>
+          A função exponencial que escolhemos f(t) = 5000 · (1,08)<sup>t</sup>
+          modela o crescimento do número de seguidores de uma jogadora nas redes
+          sociais ao longo do tempo. A base de 1,08 é representativa de uma taxa
+          de crescimento de 8% por mês, o que significa que a cada mês o número
+          de seguidores aumenta em 8%. Inicialmente, o crescimento é rápido, mas
+          conforme o número de seguidores aumenta, a taxa de crescimento
+          diminui, o que é típico em processos de crescimento exponencial. Essa
+          função é uma boa representação para o crescimento de seguidores em
+          plataformas digitais, pois mostra como o engajamento pode começar com
+          um aumento rápido, mas atingir um ponto de saturação conforme mais
+          pessoas se tornam cientes do conteúdo.
+        </p>
+
+        <p>
+          <b>Função Exponencial:</b> f(t) = 5000 · (1,08)<sup>t</sup> → Essa
+          função é usada para modelar o crescimento do número de seguidores de
+          uma jogadora ao longo do tempo. O parâmetro 1,08 reflete uma taxa
+          constante de crescimento de 8% por mês. No início, o crescimento é
+          mais rápido, mas à medida que o número de seguidores aumenta, a taxa
+          de crescimento começa a desacelerar, o que é comum em situações de
+          crescimento exponencial.
+        </p>
+
+        <div class="card">
+          <h2>Função – Crescimento de Seguidores</h2>
+          <p class="formula">f(t) = 5000 · (1,08)<sup>t</sup></p>
+          <label for="tempo-funcao">Tempo (meses):</label>
+          <input
+            type="number"
+            id="tempo-funcao"
+            value="12"
+            min="0"
+            oninput="atualizarFuncao()"
+          />
+          <p id="resultado-funcao"></p>
+          <canvas id="grafico-funcao"></canvas>
         </div>
 
-        <!-- Relatório -->
-        <section class="relatorio">
-            <h2>Relatório Conceitual</h2>
+        <h4>Limite de Saturação</h4>
+        <p>
+          O conceito de limite foi aplicado para modelar a saturação do
+          engajamento digital de uma jogadora. A função que usamos para isso é
+          um modelo de saturação assintótica, onde a função de engajamento se
+          aproxima de um valor máximo L à medida que o tempo passa. Isso é
+          representado pela fórmula lim (t → ∞) f(t) = L. Esse limite é
+          importante porque nos ajuda a entender que, eventualmente, o número de
+          seguidores e o engajamento em plataformas sociais atingem um platô, ou
+          seja, há um ponto onde o crescimento se estabiliza e não cresce mais
+          significativamente. Isso reflete um fenômeno comum nas redes sociais,
+          onde os primeiros meses de crescimento rápido são seguidos por um
+          período de estabilização.
+        </p>
 
-            <h3>1. Cabeçalho</h3>
-            <p>
-                Este relatório apresenta um protótipo conceitual que conecta a matemática
-                (funções, limites e derivadas) com o futebol feminino, explorando tanto
-                o desempenho esportivo em campo quanto o engajamento digital das atletas.
-            </p>
+        <p>
+          <b>Limite:</b> lim (t → ∞) f(t) = L → O limite aqui está relacionado
+          com o ponto de saturação do engajamento digital. No longo prazo, o
+          número de interações (curtidas, comentários, compartilhamentos) atinge
+          um valor máximo, representado pelo valor L. Esse limite é importante
+          para entender até onde o engajamento pode chegar antes de começar a
+          estabilizar.
+        </p>
 
-            <h3>2. Protótipo</h3>
-            <p>O protótipo consiste em três modelos matemáticos principais:</p>
-            <ul>
-                <li><b>Funções exponenciais</b>: crescimento do número de seguidores de uma jogadora.</li>
-                <li><b>Limites</b>: saturação do engajamento digital em longo prazo.</li>
-                <li><b>Derivadas</b>: análise da velocidade instantânea da jogadora em campo.</li>
-            </ul>
+        <!-- Limite -->
+        <div class="card">
+          <h2>Limite – Saturação do Engajamento</h2>
+          <p class="formula">lim (t → ∞) f(t) = L</p>
+          <label for="tempo-limite">Tempo (meses):</label>
+          <input
+            type="number"
+            id="tempo-limite"
+            value="24"
+            min="1"
+            oninput="atualizarLimite()"
+          />
+          <p id="resultado-limite"></p>
+          <canvas id="grafico-limite"></canvas>
+        </div>
 
-            <h3>3. Descrição da Ideia</h3>
-            <p>
-                A ideia é mostrar que os mesmos conceitos matemáticos podem ser usados em duas frentes:
-                <i>fora de campo</i> (analisando o engajamento digital das atletas) e
-                <i>dentro de campo</i> (avaliando desempenho físico através de cálculos de velocidade).
-            </p>
+        <h4>Derivada - Velocidade Instantânea</h4>
+        <p>
+          A derivada foi usada para modelar a velocidade instantânea de uma
+          jogadora em campo. A equação v(t) = ds/dt descreve a taxa de variação
+          da posição de uma jogadora em relação ao tempo. Ao calcular a
+          derivada, obtemos a velocidade instantânea dela, ou seja, a rapidez
+          com que ela se move em um dado momento. No futebol, a velocidade
+          instantânea é essencial para avaliar o desempenho da jogadora em
+          momentos críticos de uma partida, como sprints para alcançar a bola ou
+          desviar de um adversário. Esse conceito também pode ser útil para
+          estudar o condicionamento físico das jogadoras, já que a aceleração e
+          a resistência estão diretamente relacionadas com a variação da
+          velocidade ao longo do tempo.
+        </p>
 
-            <h3>4. Funções Escolhidas</h3>
-            <p><b>Função exponencial:</b> f(t) = 5000 · (1,08)<sup>t</sup> → seguidores ao longo do tempo (meses).</p>
-            <p><b>Limite:</b> lim (t → ∞) f(t) = L → saturação do engajamento em redes sociais.</p>
-            <p><b>Derivada:</b> v(t) = ds/dt → velocidade instantânea em m/s da jogadora.</p>
+        <p>
+          <b>Derivada:</b> v(t) = ds/dt → A derivada é usada para modelar a
+          velocidade instantânea de uma jogadora em campo. A equação v(t) =
+          ds/dt descreve como a posição da jogadora muda em relação ao tempo. O
+          valor da derivada nos dá a velocidade instantânea da jogadora, o que é
+          essencial para medir sua aceleração, resistência e desempenho no campo
+          durante uma partida.
+        </p>
 
-            <h3>5. Resultados dos Limites</h3>
-            <p>
-                O limite mostra que nenhuma rede social cresce de forma infinita.
-                Existe sempre um ponto de saturação, que pode ser associado à
-                popularidade máxima de uma atleta em determinada plataforma.
-            </p>
+        <!-- Derivada -->
+        <div class="card">
+          <h2>Derivada – Velocidade Instantânea</h2>
+          <p class="formula">v(t) = ds/dt</p>
+          <label for="tempo-derivada">Tempo (segundos):</label>
+          <input
+            type="number"
+            id="tempo-derivada"
+            value="5"
+            min="0"
+            oninput="atualizarDerivada()"
+          />
+          <p id="resultado-derivada"></p>
+          <canvas id="grafico-derivada"></canvas>
+        </div>
+      
 
-            <h3>6. Interpretação da Derivada</h3>
-            <p>
-                A derivada fornece informações instantâneas.
-                Se analisarmos a posição de uma jogadora a cada segundo, sua derivada nos dá
-                a <b>velocidade exata</b> em m/s naquele instante, sendo essencial para medir
-                aceleração, resistência e desempenho em campo.
-            </p>
-        </section>
+
+        <h3>Resultados dos Limites</h3>
+        <p>
+          O limite mostra que nenhuma rede social cresce de forma infinita.
+          Existe sempre um ponto de saturação, que pode ser associado à
+          popularidade máxima de uma atleta em determinada plataforma. Este
+          ponto de saturação representa a quantidade máxima de engajamento
+          possível e serve como uma previsão útil para entender a dinâmica das
+          redes sociais de uma jogadora ao longo do tempo.
+        </p>
+
+        <h3>Interpretação da Derivada</h3>
+        <p>
+          A derivada fornece informações instantâneas sobre a posição de uma
+          jogadora e, consequentemente, sobre sua velocidade. No futebol, a
+          velocidade é um parâmetro essencial para avaliar o desempenho físico
+          de uma jogadora. A derivada nos dá a velocidade exata em m/s em um
+          dado momento, e isso é crucial para medir sua aceleração, resistência
+          e capacidade de resposta dentro de uma partida.
+        </p>
+      </section>
     </main>
 
     <script>
-        // ==== Função ====
-        const ctxFuncao = document.getElementById('grafico-funcao').getContext('2d');
-        let chartFuncao = new Chart(ctxFuncao, {
-            type: 'line',
-            data: { labels: [], datasets: [{ label: 'Seguidores', data: [], borderColor: 'blue' }] },
-            options: { responsive: true }
-        });
+      // ==== Função ====
+      const ctxFuncao = document
+        .getElementById("grafico-funcao")
+        .getContext("2d");
+      let chartFuncao = new Chart(ctxFuncao, {
+        type: "line",
+        data: {
+          labels: [],
+          datasets: [{ label: "Seguidores", data: [], borderColor: "blue" }],
+        },
+        options: { responsive: true },
+      });
 
-        function atualizarFuncao() {
-            const t = parseInt(document.getElementById('tempo-funcao').value);
-            const f = 5000 * Math.pow(1.08, t);
-            document.getElementById('resultado-funcao').innerText = `Seguidores após ${t} meses: ${f.toFixed(0)} seguidores`;
+      function atualizarFuncao() {
+        const t = parseInt(document.getElementById("tempo-funcao").value);
+        const f = 5000 * Math.pow(1.08, t);
+        document.getElementById(
+          "resultado-funcao"
+        ).innerText = `Seguidores após ${t} meses: ${f.toFixed(0)} seguidores`;
 
-            let labels = [], dados = [];
-            for (let i = 0; i <= t; i++) {
-                labels.push(i);
-                dados.push(5000 * Math.pow(1.08, i));
-            }
-            chartFuncao.data.labels = labels;
-            chartFuncao.data.datasets[0].data = dados;
-            chartFuncao.update();
+        let labels = [],
+          dados = [];
+        for (let i = 0; i <= t; i++) {
+          labels.push(i);
+          dados.push(5000 * Math.pow(1.08, i));
         }
+        chartFuncao.data.labels = labels;
+        chartFuncao.data.datasets[0].data = dados;
+        chartFuncao.update();
+      }
 
-        // ==== Limite ====
-        const ctxLimite = document.getElementById('grafico-limite').getContext('2d');
-        let chartLimite = new Chart(ctxLimite, {
-            type: 'line',
-            data: { labels: [], datasets: [{ label: 'Engajamento', data: [], borderColor: 'green' }] },
-            options: { responsive: true }
-        });
+      // ==== Limite ====
+      const ctxLimite = document
+        .getElementById("grafico-limite")
+        .getContext("2d");
+      let chartLimite = new Chart(ctxLimite, {
+        type: "line",
+        data: {
+          labels: [],
+          datasets: [{ label: "Engajamento", data: [], borderColor: "green" }],
+        },
+        options: { responsive: true },
+      });
 
-        function atualizarLimite() {
-            const t = parseInt(document.getElementById('tempo-limite').value);
-            const L = 100000;
-            const f = L * (1 - Math.exp(-0.1 * t));
-            document.getElementById('resultado-limite').innerText = `Engajamento após ${t} meses: ${f.toFixed(0)} interações`;
+      function atualizarLimite() {
+        const t = parseInt(document.getElementById("tempo-limite").value);
+        const L = 100000;
+        const f = L * (1 - Math.exp(-0.1 * t));
+        document.getElementById(
+          "resultado-limite"
+        ).innerText = `Engajamento após ${t} meses: ${f.toFixed(0)} interações`;
 
-            let labels = [], dados = [];
-            for (let i = 0; i <= t; i++) {
-                labels.push(i);
-                dados.push(L * (1 - Math.exp(-0.1 * i)));
-            }
-            chartLimite.data.labels = labels;
-            chartLimite.data.datasets[0].data = dados;
-            chartLimite.update();
+        let labels = [],
+          dados = [];
+        for (let i = 0; i <= t; i++) {
+          labels.push(i);
+          dados.push(L * (1 - Math.exp(-0.1 * i)));
         }
+        chartLimite.data.labels = labels;
+        chartLimite.data.datasets[0].data = dados;
+        chartLimite.update();
+      }
 
-        // ==== Derivada ====
-        const ctxDerivada = document.getElementById('grafico-derivada').getContext('2d');
-        let chartDerivada = new Chart(ctxDerivada, {
-            type: 'line',
-            data: { labels: [], datasets: [{ label: 'Velocidade (m/s)', data: [], borderColor: 'red' }] },
-            options: { responsive: true }
-        });
+      // ==== Derivada ====
+      const ctxDerivada = document
+        .getElementById("grafico-derivada")
+        .getContext("2d");
+      let chartDerivada = new Chart(ctxDerivada, {
+        type: "line",
+        data: {
+          labels: [],
+          datasets: [
+            { label: "Velocidade (m/s)", data: [], borderColor: "red" },
+          ],
+        },
+        options: { responsive: true },
+      });
 
-        function atualizarDerivada() {
-            const t = parseInt(document.getElementById('tempo-derivada').value);
-            const v = 2 * t; // derivada de s(t) = t² → v(t) = 2t
-            document.getElementById('resultado-derivada').innerText = `Velocidade no instante ${t}s: ${v.toFixed(2)} m/s`;
+      function atualizarDerivada() {
+        const t = parseInt(document.getElementById("tempo-derivada").value);
+        const v = 2 * t; // derivada de s(t) = t² → v(t) = 2t
+        document.getElementById(
+          "resultado-derivada"
+        ).innerText = `Velocidade no instante ${t}s: ${v.toFixed(2)} m/s`;
 
-            let labels = [], dados = [];
-            for (let i = 0; i <= t; i++) {
-                labels.push(i);
-                dados.push(2 * i);
-            }
-            chartDerivada.data.labels = labels;
-            chartDerivada.data.datasets[0].data = dados;
-            chartDerivada.update();
+        let labels = [],
+          dados = [];
+        for (let i = 0; i <= t; i++) {
+          labels.push(i);
+          dados.push(2 * i);
         }
+        chartDerivada.data.labels = labels;
+        chartDerivada.data.datasets[0].data = dados;
+        chartDerivada.update();
+      }
 
-        // iniciar
-        atualizarFuncao();
-        atualizarLimite();
-        atualizarDerivada();
+      // iniciar
+      atualizarFuncao();
+      atualizarLimite();
+      atualizarDerivada();
     </script>
-</body>
-
+  </body>
 </html>
