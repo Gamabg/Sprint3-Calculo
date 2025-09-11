@@ -31,10 +31,11 @@
       }
 
       .cards {
+        display: flex;
+        flex-direction: column;
         gap: 20px;
         align-content: center;
         align-items: center;
-        margin-left: 15%;
       }
     
       .card2 {
@@ -47,6 +48,8 @@
       }
 
       .card {
+        width: 60%;
+        height: 60%;
         background: #fff;
         border-radius: 12px;
         padding: 20px;
@@ -91,6 +94,11 @@
         margin-top: 30px;
         border-radius: 12px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
       }
 
       .relatorio h2 {
@@ -142,17 +150,8 @@
 
         <h3>Introdução</h3>
         <p>
-          Este relatório apresenta um protótipo conceitual que conecta a
-          matemática (funções, limites e derivadas) com o futebol feminino,
-          explorando tanto o desempenho esportivo em campo quanto o engajamento
-          digital das atletas. A matemática pode fornecer uma análise
-          quantitativa de aspectos que muitas vezes são observados de maneira
-          mais subjetiva, como o crescimento de seguidores nas redes sociais ou
-          a velocidade de uma jogadora em campo.
+          Esse relatório mostra uma ideia que junta matemática (funções, limites e derivadas) com o futebol feminino. A gente olha tanto o que acontece dentro de campo quanto o que rola fora, tipo nas redes sociais das jogadoras. A matemática ajuda a medir coisas que normalmente a gente só percebe “no olho”, como o aumento de seguidores ou a velocidade de uma jogadora correndo.
         </p>
-
-        <hr />
-
         <h3>Protótipo</h3>
         <p>O protótipo consiste em três modelos matemáticos principais:</p>
         <ul>
@@ -172,42 +171,23 @@
             momento.
           </li>
         </ul>
-
-        <hr />
-
         <h3>Descrição da Ideia</h3>
         <p>
-          A ideia central desse relatório é mostrar que conceitos matemáticos
-          fundamentais, como funções, limites e derivadas, podem ser aplicados
-          tanto no campo de futebol quanto no universo digital. As jogadoras de
-          futebol, assim como seus números de seguidores, têm um desempenho que
-          pode ser modelado matematicamente, o que permite análises mais
-          objetivas e precisas.
+          A ideia principal desse relatório é mostrar que dá pra usar matemática básica, tipo funções, limites e derivadas, tanto no jogo de futebol quanto no mundo digital. O desempenho das jogadoras e até o número de seguidores delas pode ser explicado com contas de matemática, deixando a análise mais clara e certeira.
         </p>
+      </section>
 
-        <hr />
-        <br />
-
+      <section class="relatorio">
         <h3>Explicação Detalhada das Funções</h3>
         <h4>Função Exponencial</h4>
         <p>
-          A função exponencial que escolhemos f(t) = 5000 · (1,08)<sup>t</sup>
-          modela o crescimento do número de seguidores de uma jogadora nas redes
-          sociais ao longo do tempo. A base de 1,08 é representativa de uma taxa
-          de crescimento de 8% por mês, o que significa que a cada mês o número
-          de seguidores aumenta em 8%. Inicialmente, o crescimento é rápido, mas
-          conforme o número de seguidores aumenta, a taxa de crescimento
-          diminui, o que é típico em processos de crescimento exponencial. Essa
-          função é uma boa representação para o crescimento de seguidores em
-          plataformas digitais, pois mostra como o engajamento pode começar com
-          um aumento rápido, mas atingir um ponto de saturação conforme mais
-          pessoas se tornam cientes do conteúdo.
+          A função exponencial que usamos foi f(t) = 5000 · (1,08)<sup>t</sup>, que mostra como os seguidores de uma jogadora podem crescer com o tempo. Esse 1,08 significa que todo mês os seguidores aumentam 8%. No começo esse crescimento é bem rápido, mas depois vai ficando mais devagar, o que é normal nesses casos. Essa conta representa bem como funciona o aumento de seguidores: cresce muito no início, mas depois chega num ponto em que estabiliza porque já tem muita gente que conhece o conteúdo.
         </p>
 
         <p>
           <b>Função Exponencial:</b> f(t) = 5000 · (1,08)<sup>t</sup> → Essa
-          função é usada para modelar o crescimento do número de seguidores de
-          uma jogadora ao longo do tempo. O parâmetro 1,08 reflete uma taxa
+          função é usada para ver o crescimento do número de seguidores de
+          uma jogadora ao longo do tempo. O parâmetro 1,08 é uma taxa
           constante de crescimento de 8% por mês. No início, o crescimento é
           mais rápido, mas à medida que o número de seguidores aumenta, a taxa
           de crescimento começa a desacelerar, o que é comum em situações de
@@ -234,17 +214,7 @@
 
         <h4>Limite de Saturação</h4>
         <p>
-          O conceito de limite foi aplicado para modelar a saturação do
-          engajamento digital de uma jogadora. A função que usamos para isso é
-          um modelo de saturação assintótica, onde a função de engajamento se
-          aproxima de um valor máximo L à medida que o tempo passa. Isso é
-          representado pela fórmula lim (t → ∞) f(t) = L. Esse limite é
-          importante porque nos ajuda a entender que, eventualmente, o número de
-          seguidores e o engajamento em plataformas sociais atingem um platô, ou
-          seja, há um ponto onde o crescimento se estabiliza e não cresce mais
-          significativamente. Isso reflete um fenômeno comum nas redes sociais,
-          onde os primeiros meses de crescimento rápido são seguidos por um
-          período de estabilização.
+          O limite mostra quando o engajamento de uma jogadora começa a parar de crescer. A ideia é que com o tempo ele chega perto de um valor máximo L. Em matemática isso aparece assim: lim (t → ∞) f(t) = L. Isso quer dizer que, depois de um tempo, o número de seguidores e o engajamento ficam quase iguais, sem subir muito mais. É o que costuma acontecer nas redes: no começo cresce rápido, mas depois dá uma estabilizada.
         </p>
 
         <p>
@@ -277,17 +247,7 @@
 
         <h4>Derivada - Velocidade Instantânea</h4>
         <p>
-          A derivada foi usada para modelar a velocidade instantânea de uma
-          jogadora em campo. A equação v(t) = ds/dt descreve a taxa de variação
-          da posição de uma jogadora em relação ao tempo. Ao calcular a
-          derivada, obtemos a velocidade instantânea dela, ou seja, a rapidez
-          com que ela se move em um dado momento. No futebol, a velocidade
-          instantânea é essencial para avaliar o desempenho da jogadora em
-          momentos críticos de uma partida, como sprints para alcançar a bola ou
-          desviar de um adversário. Esse conceito também pode ser útil para
-          estudar o condicionamento físico das jogadoras, já que a aceleração e
-          a resistência estão diretamente relacionadas com a variação da
-          velocidade ao longo do tempo.
+          A derivada foi usada pra calcular a velocidade de uma jogadora em campo. A fórmula v(t) = ds/dt mostra como a posição dela muda com o tempo. Fazendo essa conta, a gente descobre a velocidade instantânea, que é a rapidez dela em um momento exato. No futebol isso é importante pra analisar lances rápidos, tipo quando a jogadora dá um sprint pra alcançar a bola ou fugir de uma marcação. Também dá pra usar esse conceito pra estudar o preparo físico, já que aceleração e resistência têm tudo a ver com como a velocidade muda ao longo do jogo.
         </p>
 
         <p>
@@ -317,25 +277,17 @@
 
         <hr />
         <br />
+      </section>  
 
+      <section class="relatorio">
         <h3>Resultados dos Limites</h3>
         <p>
-          O limite mostra que nenhuma rede social cresce de forma infinita.
-          Existe sempre um ponto de saturação, que pode ser associado à
-          popularidade máxima de uma atleta em determinada plataforma. Este
-          ponto de saturação representa a quantidade máxima de engajamento
-          possível e serve como uma previsão útil para entender a dinâmica das
-          redes sociais de uma jogadora ao longo do tempo.
+          O limite mostra que nenhuma rede social cresce pra sempre. Sempre chega um ponto em que para de aumentar, que seria a popularidade máxima da jogadora naquela plataforma. Esse ponto mostra o máximo de engajamento possível e ajuda a prever como o crescimento dela nas redes vai se comportar com o tempo.
         </p>
 
         <h3>Interpretação da Derivada</h3>
         <p>
-          A derivada fornece informações instantâneas sobre a posição de uma
-          jogadora e, consequentemente, sobre sua velocidade. No futebol, a
-          velocidade é um parâmetro essencial para avaliar o desempenho físico
-          de uma jogadora. A derivada nos dá a velocidade exata em m/s em um
-          dado momento, e isso é crucial para medir sua aceleração, resistência
-          e capacidade de resposta dentro de uma partida.
+          A derivada mostra a posição da jogadora e, com isso, sua velocidade. No futebol, a velocidade é super importante pra avaliar o desempenho físico. A derivada dá a velocidade exata em m/s em um momento específico, e isso ajuda a medir aceleração, resistência e como ela reage durante a partida.
         </p>
       </section>
     </main>
